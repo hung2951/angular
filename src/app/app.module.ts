@@ -9,7 +9,9 @@ import { NameComponent } from './name/name.component';
 import { IdentityComponent } from './identity/identity.component';
 import { DameComponent } from './dame/dame.component';
 import { AvatarComponent } from './avatar/avatar.component';
-
+import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
+import { ValidateComponent } from './conponents/validate/validate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +19,15 @@ import { AvatarComponent } from './avatar/avatar.component';
     NameComponent,
     IdentityComponent,
     DameComponent,
-    AvatarComponent
+    AvatarComponent,
+    FormComponent,
+    ValidateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

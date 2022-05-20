@@ -1,10 +1,35 @@
 <div>
-   <div>
+   <!-- <div>
       <p>
          Tên SV: <app-name [name]='studentName'></app-name>
       </p>
       <p>Mã SV: <app-identity [MSV]='studentMSV'></app-identity>
       </p>
-   </div>
-   <app-home [champs]='LMHT'></app-home>
+      <button class="btn btn-primary" (click)="onClick()">{{showStatus ?'Ẩn':'Hiện'}}</button>
+   </div> -->
+
+    <hr>
+    <div>
+      <h2 class="text-center">Angular form</h2>
+      <app-form></app-form>
+    </div>
+    <hr>
+    <!-- <div>
+      <label for="input"> Tên
+        <input type="text" id="input" (input)="onInput($event,'name')">
+      </label>
+      <label for="dame"> Dame
+        <input type="number" id="dame" (input)="onInput($event,'dame')">
+      </label>
+      <label for="price"> Price
+        <input type="number" id="price" (input)="onInput($event,'price')">
+      </label>
+      <label for="avatar"> Ảnh
+        <input type="text" id="avatar" (input)="onInput($event,'avatar')">
+      </label>
+      <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+    <h2 class="text-center">Champions</h2>
+    <app-home [champs]='LMHT' *ngIf="showStatus"></app-home>
+   </div> -->
+
 </div>

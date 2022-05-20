@@ -1,0 +1,59 @@
+<div class="container">
+  <!-- <p>{{userForm.value|json}}</p> -->
+  <form class="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <input type="text" [(ngModel)]="inputValues.id" name="id" #id="ngModel">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Họ và tên</label>
+      <input type="text"  [(ngModel)]="inputValues.name" required minlength="5" #name="ngModel" class="form-control" name="name" ngModel
+        id="exampleInputEmail1" aria-describedby="emailHelp">
+      <app-validate [field]="name"></app-validate>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Tuổi</label>
+      <input type="number"  [(ngModel)]="inputValues.age" required min="1" max="100" #age="ngModel" class="form-control" name="age" ngModel
+        id="exampleInputEmail1" aria-describedby="emailHelp">
+      <app-validate [field]="age" key="tuổi"></app-validate>
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email"  [(ngModel)]="inputValues.email" required #email="ngModel" class="form-control" name="email" ngModel id="exampleInputEmail1" aria-describedby="emailHelp">
+      <app-validate [field]="email"></app-validate>
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">SĐT</label>
+      <input type="number"  [(ngModel)]="inputValues.phone" required #phone="ngModel" class="form-control" name="phone" ngModel id="exampleInputPassw  ord1">
+      <app-validate [field]="phone"></app-validate>
+    </div>
+    <button type="submit" [disabled] = !userForm.valid class="btn btn-primary">Submit</button>
+  </form>
+
+  <h2 class="text-center">Table</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Number phone</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users; index as i">
+        <th scope="">{{ item.id }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+        <td>{{ item.email }}</td>
+        <td>0{{ item.phone }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="onEdit(users,item.id)">Edit</button>
+          <button class="btn btn-danger" (click)="onRemove(item.id)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

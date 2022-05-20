@@ -4,3 +4,9 @@
 .color-blue{
     color: blue;
 }
+.showtb{
+  display: block;
+}
+.hiddentb{
+  display: none;
+}

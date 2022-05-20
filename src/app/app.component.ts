@@ -50,4 +50,29 @@ export class AppComponent {
   ];
   studentName = 'Trương Văn Hùng'
   studentMSV = 'PH12345'
+
+  //
+  showStatus = true;
+  // sự kiện
+
+  onClick() {
+    this.showStatus = !this.showStatus
+
+  }
+  inputObj={
+    name:'',
+    avatar:'',
+    dame:'',
+    price:''
+  }
+  onInput(e:any,key:'name'|'avatar'|'dame'|'price'){
+    this.inputObj[key] = e.target.value
+  }
+  onSubmit(){
+    this.LMHT.push({
+      ...this.inputObj,
+      dame:+this.inputObj.dame,
+      price:+this.inputObj.price
+    })
+  }
 }
