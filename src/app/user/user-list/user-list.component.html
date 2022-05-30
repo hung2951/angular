@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Number phone</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of users; index as i">
+      <th scope="">{{ item.id }}</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.email }}</td>
+      <td>0{{ item.phone }}</td>
+      <td>
+        <button class="btn btn-warning" (click)="onEdit(item.id)">Edit</button>
+        <button class="btn btn-danger" (click)="onRemove(item.id)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

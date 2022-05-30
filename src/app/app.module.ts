@@ -12,6 +12,19 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 import { ValidateComponent } from './conponents/validate/validate.component';
+import { UserComponent } from './user/user.component';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { ProductComponent } from './product/product.component';
+import { AboutComponent } from './about/about.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ClientLayoutComponent } from './layout/client-layout/client-layout.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
+import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
+
+// module cung cấp phương thức call api
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +34,24 @@ import { ValidateComponent } from './conponents/validate/validate.component';
     DameComponent,
     AvatarComponent,
     FormComponent,
-    ValidateComponent
+    ValidateComponent,
+    UserComponent,
+    UserFormComponent,
+    UserListComponent,
+    ProductComponent,
+    AboutComponent,
+    ProductDetailsComponent,
+    ClientLayoutComponent,
+    AdminLayoutComponent,
+    AdminProductListComponent,
+    AdminProductFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

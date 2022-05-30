@@ -39,15 +39,18 @@ export class FormComponent implements OnInit {
       this.users.push({...data.value,id:maxId+1})
     } else {
       // update
-      this.inputValues = data.value
+     let userId = this.users.find(item=>item.id == this.inputValues.id)
+     console.log('1', userId);
 
-      // console.log(this.inputValues.id);
+      // this.inputValues = data.value
+      userId = data.value
+      console.log('2',userId);
     }
 
     //2. Cập nhật giá trị của inputValues về default
-  data.resetForm({
-    id:0
-  })
+    data.resetForm({
+      id:0
+    })
   }
   onRemove(id:number){
     const confirm = window.confirm('Bạn có muốn xóa không?')

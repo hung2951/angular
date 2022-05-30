@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-12">
+      <div class="white-box">
+          <h3 class="box-title">Product List</h3>
+          <p class="text-muted btn btn-link"><a routerLink="/admin/product/create">Create product here</a></p>
+          <div class="table-responsive">
+              <table class="table text-nowrap">
+                  <thead>
+                      <tr>
+                          <th class="border-top-0">#</th>
+                          <th class="border-top-0">Product</th>
+                          <th class="border-top-0">Price</th>
+                          <th class="border-top-0">Category</th>
+                          <th class="border-top-0"></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let product of products">
+                          <td>1</td>
+                          <td>
+                            <img src={{product.img}} width="100" alt="">
+                            <span>{{product.name}}</span>
+                          </td>
+                          <td>{{product.price}}</td>
+                          <td>{{product.category}}</td>
+                          <td>
+                            <button class="btn btn-primary">edit</button>
+                            <button class="btn btn-danger">remove</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
