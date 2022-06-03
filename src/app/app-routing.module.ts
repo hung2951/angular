@@ -4,6 +4,9 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './layout/client-layout/client-layout.component';
+import { AdminCategoryFormComponent } from './pages/admin/admin-category/admin-category-form/admin-category-form.component';
+import { AdminCategoryListComponent } from './pages/admin/admin-category/admin-category-list/admin-category-list.component';
+import { AdminProductDetailComponent } from './pages/admin/admin-product-detail/admin-product-detail.component';
 import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
 import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
 import { ProductComponent } from './product/product.component';
@@ -48,7 +51,20 @@ const routes: Routes = [
         {
           path:':id/edit',
           component:AdminProductFormComponent
+        },
+        {
+          path:'detail/:id',
+          component:AdminProductDetailComponent
         }
+      ]
+      },
+      {
+        path:'category',
+        children:[{
+          path:'',
+          component:AdminCategoryListComponent
+        },
+        {path:'create',component:AdminCategoryFormComponent}
       ]
       }
     ]

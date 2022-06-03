@@ -3,23 +3,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Category } from '../types/category';
-import { Product } from '../types/product';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class CategoryService {
 
   constructor(private http:HttpClient) { }
-
-  getProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>(environment.products)
+  getCategory(): Observable<Category[]>{
+    return this.http.get<Category[]>(environment.categories)
   }
-  removeProduct(id:string|number):Observable<any>{
-    return this.http.delete(`${environment.products}/${id}`)
-  }
-  getProduct(id:string):Observable<Product>{
-    return this.http.get<Product>(`${environment.products}/${id}`)
+  removeCategory(id:string|number):Observable<any>{
+    return this.http.delete(`${environment.categories}/${id}`)
   }
   creatCategory(data:Category):Observable<Category>{
     return this.http.post<Category>(`${environment.categories}`,data)

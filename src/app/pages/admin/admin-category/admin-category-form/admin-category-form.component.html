@@ -1,0 +1,8 @@
+<form  [formGroup]="categoryForm" (ngSubmit)="onSubmit()" >
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Category Name</label>
+    <input type="text"  formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <app-validate [field]="categoryForm.get('name')"></app-validate>
+  </div>
+  <button type="submit" [disabled]="!categoryForm.valid" class="btn btn-primary">Submit</button>
+</form>

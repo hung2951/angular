@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -24,7 +24,10 @@ import { AdminProductListComponent } from './pages/admin/admin-product/admin-pro
 import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
 
 // module cung cấp phương thức call api
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { AdminProductDetailComponent } from './pages/admin/admin-product-detail/admin-product-detail.component';
+import { AdminCategoryFormComponent } from './pages/admin/admin-category/admin-category-form/admin-category-form.component';
+import { AdminCategoryListComponent } from './pages/admin/admin-category/admin-category-list/admin-category-list.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,13 +48,17 @@ import {HttpClientModule} from '@angular/common/http'
     AdminLayoutComponent,
     AdminProductListComponent,
     AdminProductFormComponent,
+    AdminProductDetailComponent,
+    AdminCategoryFormComponent,
+    AdminCategoryListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -24,8 +24,9 @@
                           <td>{{product.price}}</td>
                           <td>{{product.category}}</td>
                           <td>
-                            <button class="btn btn-primary">edit</button>
-                            <button class="btn btn-danger">remove</button>
+                            <button class="btn btn-info" routerLink="/admin/product/detail/{{product._id}}">Detail</button>
+                            <button class="btn btn-primary" >edit</button>
+                            <button class="btn btn-danger" (click)="onRemove(product._id!)">remove</button>
                           </td>
                       </tr>
                   </tbody>
