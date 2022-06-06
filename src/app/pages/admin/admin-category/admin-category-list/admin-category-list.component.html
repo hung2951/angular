@@ -19,7 +19,7 @@
                             <span>{{category.name}}</span>
                           </td>
                           <td>
-                            <button class="btn btn-primary" >edit</button>
+                            <button class="btn btn-primary" routerLink="/admin/category/edit/{{category._id}}" >Edit</button>
                             <button class="btn btn-danger" (click)="onRemove(category._id!)">remove</button>
                           </td>
                       </tr>

@@ -27,7 +27,9 @@ import { AdminProductFormComponent } from './pages/admin/admin-product/admin-pro
 import {HttpClientModule} from '@angular/common/http';
 import { AdminProductDetailComponent } from './pages/admin/admin-product-detail/admin-product-detail.component';
 import { AdminCategoryFormComponent } from './pages/admin/admin-category/admin-category-form/admin-category-form.component';
-import { AdminCategoryListComponent } from './pages/admin/admin-category/admin-category-list/admin-category-list.component'
+import { AdminCategoryListComponent } from './pages/admin/admin-category/admin-category-list/admin-category-list.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,8 @@ import { AdminCategoryListComponent } from './pages/admin/admin-category/admin-c
     AdminProductDetailComponent,
     AdminCategoryFormComponent,
     AdminCategoryListComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

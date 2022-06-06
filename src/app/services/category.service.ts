@@ -10,13 +10,20 @@ import { Category } from '../types/category';
 export class CategoryService {
 
   constructor(private http:HttpClient) { }
+
   getCategory(): Observable<Category[]>{
     return this.http.get<Category[]>(environment.categories)
+  }
+  getOneCategory(id:string): Observable<Category>{
+    return this.http.get<Category>(`${environment.categories}/${id}`)
   }
   removeCategory(id:string|number):Observable<any>{
     return this.http.delete(`${environment.categories}/${id}`)
   }
   creatCategory(data:Category):Observable<Category>{
     return this.http.post<Category>(`${environment.categories}`,data)
+  }
+  updateCate(id:string,data:Category):Observable<Category>{
+    return this.http.put<Category>(`${environment.categories}/${id}`,data)
   }
 }

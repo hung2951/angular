@@ -9,6 +9,9 @@ import { AdminCategoryListComponent } from './pages/admin/admin-category/admin-c
 import { AdminProductDetailComponent } from './pages/admin/admin-product-detail/admin-product-detail.component';
 import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
 import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { PrivateAdminGuard } from './private/private-admin.guard';
 import { ProductComponent } from './product/product.component';
 const routes: Routes = [
   {
@@ -32,6 +35,7 @@ const routes: Routes = [
   {
     path:'admin',
     component: AdminLayoutComponent,
+    canActivate:[PrivateAdminGuard], // check login
     children:[
       // {
       //   path:'',
@@ -64,15 +68,19 @@ const routes: Routes = [
           path:'',
           component:AdminCategoryListComponent
         },
-        {path:'create',component:AdminCategoryFormComponent}
+        {path:'create',component:AdminCategoryFormComponent},
+        {path:'edit/:id',component:AdminCategoryFormComponent},
       ]
       }
     ]
-  }
+  },
+  {path:'login',component:LoginComponent},
+  {path:'signup',component:RegisterComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[PrivateAdminGuard]
 })
 export class AppRoutingModule { }
