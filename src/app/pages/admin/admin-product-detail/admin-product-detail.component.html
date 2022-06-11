@@ -1,1 +1,6 @@
-<!-- <p>ID:{{product.id}}</p> -->
+<p>{{product.name}}</p>
+<div>
+  <input [value]="cartValue" (input)="onChange($event)" type="number" placeholder="Số lượng">
+  <button (click)="AddToCart()">Thêm giỏ hàng</button>
+</div>
+
